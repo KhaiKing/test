@@ -10,6 +10,19 @@ peer.on("open", function(id) {
   peerId = id;
 })
 
+$.ajax ({
+     url: "https://global.xirsys.net/_turn/TurnRTC/",
+     type: "PUT",
+     async: false,
+     headers: {
+       "Authorization": "Basic " + btoa("khaiking:9e68b986-75d2-11e7-ba8b-d7aa9a6627d5")
+     },
+     success: function (res){
+       console.log("ICE List: "+res);
+     }
+ });
+
+
 function playPeer(call){
   showLive();
   playLocal(localStream);
