@@ -1,14 +1,6 @@
 const socket = io("https://web-rtc-001.herokuapp.com/");
-var peer = new Peer({
-  key: 'peerjs',
-  host: 'peerjs-server-001.herokuapp.com',
-  secure: true,
-  port: 443
-});
-var peerId, fullname;
-peer.on("open", function(id) {
-  peerId = id;
-})
+
+var peerId, fullname, customConfig;
 
 $.ajax ({
      url: "https://global.xirsys.net/_turn/TurnRTC/",
@@ -18,9 +10,21 @@ $.ajax ({
        "Authorization": "Basic " + btoa("khaiking:9e68b986-75d2-11e7-ba8b-d7aa9a6627d5")
      },
      success: function (res){
-       console.log("ICE List: "+res);
+       customConfig = res.v.iceServers;
      }
  });
+
+var peer = new Peer({
+  key: 'peerjs',
+  host: 'peerjs-server-001.herokuapp.com',
+  secure: true,
+  port: 443,
+  config: customConfig
+});
+
+peer.on("open", function(id) {
+  peerId = id;
+})
 
 function playPeer(call){
   showLive();
