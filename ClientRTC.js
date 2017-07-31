@@ -1,6 +1,9 @@
 const socket = io("https://web-rtc-001.herokuapp.com/");
 var peer = new Peer({
-  key: 'kv7pis9v4n3o9a4i'
+  key: 'peerjs',
+  host: 'peerjs-server-001.herokuapp.com',
+  secure: true,
+  port: 443
 });
 var peerId, fullname;
 peer.on("open", function(id) {
