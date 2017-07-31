@@ -1,0 +1,295 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #333;
+  color: #fff;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.content-center {
+  margin: 0 auto;
+}
+
+.width-25pc {
+  width: 25%;
+}
+
+.width-75pc {
+  width: 75%;
+}
+
+button {
+  background-color: #4285F4;
+  border: none;
+  border-radius: 2px;
+  -webkit-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, .5);
+  -moz-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, .5);
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, .5);
+  color: white;
+  font-size: 0.8em;
+  height: 2.75em;
+  padding: 0.5em 0.7em 0.5em 0.7em;
+  width: 8em;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+button:active {
+  background-color: #3367D6;
+}
+
+button:hover {
+  background-color: #3B78E7;
+}
+
+button:focus {
+  -webkit-box-shadow: 0 10px 15px 0 rgba(0, 0, 0, .5);
+  -moz-box-shadow: 0 10px 15px 0 rgba(0, 0, 0, .5);
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, .5);
+  outline: none;
+}
+
+button[disabled] {
+  background-color: rgb(30, 30, 30);
+  background-color: rgba(255, 255, 255, 0.12);
+  color: rgb(76, 76, 76);
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px #4c4c4f;
+  color: #fff;
+  display: block;
+  font-size: 1em;
+  margin-right: 20px;
+  padding: .4em 0;
+  width: 100%;
+}
+
+input:focus {
+  border-bottom: solid 2px #4285F4;
+  outline: none;
+}
+
+input.invalid {
+  border-bottom: solid 2px #F44336;
+}
+
+.hide {
+  display: none;
+}
+
+#divUserList {
+  display: none;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 300px;
+  z-index: 1111;
+}
+
+#divLogin {
+  width: 100%;
+  max-width: 300px;
+}
+
+#divLoged {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+#divLive {
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.user-login {
+  display: table;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 5px 5px 0;
+  cursor: pointer;
+}
+
+.free-member {
+  color: #d9d3dd;
+}
+
+.free-member:hover {
+  color: #ffffff;
+}
+
+.host-member {
+  color: #c1d011;
+}
+
+.host-member:hover {
+  color: #edff16;
+}
+
+.client-member {
+  color: #8e8e8e;
+  cursor: default;
+}
+
+.user-login-call {
+  color: #5aed15;
+  float: left;
+}
+
+.user-login-fullname {
+  float: left;
+  margin-left: 5px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline-table {
+  display: inline-table;
+}
+
+.heading-online {
+  margin: 0;
+  border-bottom: 1px solid #5d665e;
+}
+
+#btnLogout {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.live-video {
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  display: inline-block;
+  float: left;
+  box-sizing: border-box;
+  transition: width 0.5s, height 0.5s, left 0.5s, right 0.5s;
+  overflow: hidden;
+  padding: 5px;
+  left: 0;
+  top: 0;
+  text-align: center;
+}
+
+.live-video-wrapper {
+  display: block;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.live-video-inner {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  width: auto;
+  height: auto;
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+.live-video-inner label {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 999;
+  color: #f5eaea;
+  background: rgba(8, 8, 8, 0.4);
+  padding: 3px 10px;
+  font-size: 15px;
+}
+
+.live-video-inner video {
+  z-index: 1000;
+  object-fit: fill;
+  width: auto;
+  height: auto;
+}
+
+.controls {
+  position: absolute;
+  top: 10px;
+  left: -100px;
+  transition: left 0.7s ease-out;
+  max-width: 80px;
+  z-index: 1001;
+}
+
+@media screen and (max-height: 220px) {
+  .controls {
+    max-width: 160px;
+    left: -200px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  /*.live-video {
+    width: 100% !important;
+  }*/
+}
+
+.controls.active {
+  left: 20px;
+}
+
+.live-control {
+  display: inline-block;
+  font-size: 25px;
+  width: 25px;
+  height: 25px;
+  background: #333;
+  padding: 10px;
+  border-radius: 23px;
+  opacity: 0.6;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 2px 2px 6px 1px #928f8f;
+  transition: transform 0.2s ease-in;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.live-control:hover {
+  background-color: #407cf7;
+  opacity: 1;
+  box-shadow: 4px 4px 9px 5px #525252;
+  transform: scale(1.2, 1.2);
+}
+
+.live-control-slash {
+  width: 35px;
+  height: 3px;
+  background: #fff;
+  transform: rotate(-45deg);
+  margin-top: -16px;
+  margin-left: -5px;
+  box-shadow: 2px 2px 3px 1px #424040;
+  display: none;
+}

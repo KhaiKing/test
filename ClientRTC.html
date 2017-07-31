@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Client Web RTC</title>
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="ClientRTC.css">
+</head>
+
+<body>
+  <div id="divLogin" class="content-center">
+    <h1 class="">Login</h1>
+    <form>
+      <div class="input-group">
+        <input type="text" id="username" value="khaiking" placeholder="username" autofocus="">
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" value="111" placeholder="password" autofocus="">
+      </div>
+      <div id="room-id-input-buttons">
+        <button type="submit" id="btnLogin">LOGIN</button>
+        <button id="btnRegister">REGISTER</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="divLoged">
+    <div id="divUserList">
+      <h1 class="heading-online">
+        <span>Online User</span>
+      </h1>
+      <div class="user-list" style="margin-top: 10px;"></div>
+    </div>
+
+    <div class="controls">
+      <div id="btnLogout" class="live-control" title="Logout">
+        <i class="fa fa-sign-out" aria-hidden="true"></i>
+      </div>
+
+      <div id="btnUserList" class="live-control slash" title="Show users">
+        <i class="fa fa-group" aria-hidden="true"></i>
+        <div class="live-control-slash"></div>
+      </div>
+
+      <div id="btnMicrophone" class="live-control slash">
+        <i class="fa fa-microphone" aria-hidden="true"></i>
+        <div class="live-control-slash"></div>
+      </div>
+
+      <div id="btnCamera" class="live-control slash">
+        <i class="fa fa-video-camera" aria-hidden="true"></i>
+        <div class="live-control-slash"></div>
+      </div>
+
+      <div id="btnCloseLive" class="live-control">
+        <i class="fa fa-close" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <div id="divLive">
+      <div class="live-video local-video">
+        <div class="live-video-wrapper">
+          <div class="live-video-inner">
+            <label id="lblFullName"></label>
+            <video autoplay id="localVideo"></video>
+            <!-- <video src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay id="localVideo"></video> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="socket.io.js"></script>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="peer.min.js"></script>
+    <!-- <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script> -->
+    <script src="ClientRTC.js"></script>
+</body>
+
+</html>
