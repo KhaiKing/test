@@ -22,7 +22,6 @@ $.ajax ({
      }
  });
 
-
 function playPeer(call){
   showLive();
   playLocal(localStream);
