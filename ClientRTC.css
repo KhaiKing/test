@@ -155,6 +155,8 @@ input.invalid {
 .user-login-call {
   color: #5aed15;
   float: left;
+  width: 20px;
+  text-align: center;
 }
 
 .user-login-fullname {
