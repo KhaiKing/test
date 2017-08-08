@@ -1,6 +1,7 @@
 html {
   width: 100%;
   height: 100%;
+  display: block;
 }
 
 body {
@@ -11,6 +12,7 @@ body {
   height: 100%;
   box-sizing: border-box;
   margin: 0;
+  font-size: 20px;
 }
 
 .text-center {
