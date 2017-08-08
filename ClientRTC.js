@@ -215,16 +215,15 @@ function arrangeVideo() {
   let count = $(".live-video").length;
   let s = window.innerWidth * window.innerHeight;
   let unit = s / count;
-  let x = Math.sqrt(unit);
-
-  let round = Math.floor(window.innerWidth / x);
-
-  let width = Math.floor(window.innerWidth / round);
+  //let x = Math.sqrt(unit);
+  //let round = Math.floor(window.innerWidth / x);
+  //let width = Math.floor(window.innerWidth / round);
+  let width = Math.floor(window.innerWidth / count);
   let height = Math.floor(unit / width);
-  let y = Math.floor(window.innerHeight / Math.ceil(count / round));
-  if (height > y) {
-    height = y;
-  }
+//   let y = Math.floor(window.innerHeight / Math.ceil(count / round));
+//   if (height > y) {
+//     height = y;
+//   }
 
   $(".live-video").each(function(index) {
     $(this).css({
@@ -281,7 +280,7 @@ function callRequest(username) {
 
 function openStream() {
   const config = {
-    audio: true,
+    audio: false,
     video: true
   };
 
