@@ -226,9 +226,10 @@ function arrangeVideo() {
 
   $(".live-video").each(function(index) {
     $(this).css({
-      top: Math.floor(index / round) * height,
+      //top: Math.floor(index / round) * height,
+      top: 0,
       height: height,
-      left: (index % round) * width,
+      left: index * width,
       width: width
     });
 
