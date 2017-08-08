@@ -26,7 +26,6 @@ var peer = new Peer({
 
 // var peer = new Peer({
 //   key: 'kv7pis9v4n3o9a4i',
-//   secure: true,
 //   config: customConfig
 // });
 
