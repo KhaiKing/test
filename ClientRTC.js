@@ -1,4 +1,5 @@
 const socket = io("https://web-rtc-001.herokuapp.com/");
+// const socket = io("http://192.168.1.126:8888");
 
 var peerId, fullname, customConfig;
 
@@ -21,6 +22,13 @@ var peer = new Peer({
   port: 443,
   config: customConfig
 });
+
+
+// var peer = new Peer({
+//   key: 'kv7pis9v4n3o9a4i',
+//   secure: true,
+//   config: customConfig
+// });
 
 peer.on("open", function(id) {
   peerId = id;
@@ -45,6 +53,7 @@ peer.on("call", function(call) {
         localStream = stream;
         playPeer(call);
       })
+      .catch(err => { alert(err.message)});
     }
   }
 })
@@ -142,6 +151,7 @@ socket.on("CALL_RESPONSE", function(response) {
         playRemote(remoteStream, call.peer);
       });
     })
+    .catch(err => { alert(err.message)});
   } else {
     alert(response.message);
   }
@@ -265,7 +275,7 @@ function callRequest(username) {
   openStream().then(function(stream) {
     localStream = stream;
     socket.emit("CALL_REQUEST", username);
-  });
+  }).catch(err => { alert(err.message)});
   return false;
 }
 
@@ -274,6 +284,7 @@ function openStream() {
     audio: true,
     video: true
   };
+
   return navigator.mediaDevices.getUserMedia(config);
 }
 
