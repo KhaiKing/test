@@ -26,6 +26,8 @@ $.ajax ({
 
 var peer = new Peer({
   key: 'kv7pis9v4n3o9a4i',
+  secure: true,
+  port: 443,
   config: customConfig
 });
 
