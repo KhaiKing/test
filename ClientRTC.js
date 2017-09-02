@@ -15,19 +15,19 @@ $.ajax ({
      }
  });
 
-var peer = new Peer({
-  key: 'peerjs',
-  host: 'peerjs-server-001.herokuapp.com',
-  secure: true,
-  port: 443,
-  config: customConfig
-});
-
-
 // var peer = new Peer({
-//   key: 'kv7pis9v4n3o9a4i',
+//   key: 'peerjs',
+//   host: 'peerjs-server-001.herokuapp.com',
+//   secure: true,
+//   port: 443,
 //   config: customConfig
 // });
+
+
+var peer = new Peer({
+  key: 'kv7pis9v4n3o9a4i',
+  config: customConfig
+});
 
 peer.on("open", function(id) {
   peerId = id;
