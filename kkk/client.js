@@ -3,18 +3,8 @@ var name;
 var connectedUser;
 
 //SOCKET
-var sockethost = window.location.hostname + ":9090/";
-var socketprotocol = "ws";
-if (location.protocol === 'https:') {
-      // page is secure
-      sockethost = window.location.hostname + "/wss2/";
-      socketprotocol = "wss";
-}
-
-
-
 //connecting to our signaling server
-var conn = new WebSocket(socketprotocol + "://" + sockethost);
+var conn = new WebSocket("https://khaiking-webrtc.herokuapp.com/");
 
 conn.onopen = function () {
       console.log("Connected to the signaling server");
