@@ -4,7 +4,7 @@ var connectedUser;
 
 //SOCKET
 //connecting to our signaling server
-var conn = new WebSocket("https://khaiking-webrtc.herokuapp.com/");
+var conn = new WebSocket("wss://khaiking-webrtc.herokuapp.com/");
 
 conn.onopen = function () {
       console.log("Connected to the signaling server");
